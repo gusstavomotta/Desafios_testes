@@ -5,6 +5,9 @@ use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertFalse;
 use function PHPUnit\Framework\assertNotEquals;
 use function PHPUnit\Framework\assertNotSame;
+use function PHPUnit\Framework\assertNull;
+use function PHPUnit\Framework\assertObjectHasProperty;
+use function PHPUnit\Framework\assertObjectNotHasProperty;
 use function PHPUnit\Framework\assertSame;
 
 require_once "/home/imply/Área de Trabalho/lista 3/Desafios_testes/src/MyClass.php";
@@ -37,7 +40,7 @@ class MyClassTest extends TestCase {
     }
     public function testSetMockClassName(){
 
-        $mock = $this->getMockBuilder (MyClass::class)
+        $mock = $this->getMockBuilder(MyClass::class)
         ->disableOriginalConstructor()
         ->setMockClassName('mockMyClass')
         ->getMock();
@@ -50,8 +53,9 @@ class MyClassTest extends TestCase {
         ->disableOriginalConstructor()
         ->getMock();
 
-        
-    }
+        // assertNull(get_object_vars($mock));
+        // assertObjectNotHasProperty('idade', $mock);
+        }
     public function testDisableOriginalClone(){
 
         $mock = $this->getMockBuilder (MyClass::class)
