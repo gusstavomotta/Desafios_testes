@@ -1,17 +1,17 @@
 {
-    "name": "testes/teste",
+    "name": "teste/teste",
     "autoload": {
         "psr-4": {
-            "Testes\\Teste\\": "src/"
+            "Teste\\Teste\\": "src/"
         }
     },
     "authors": [
         {
             "name": "Gustavo Oliveira da Motta",
-            "email": "gumotta2908@hotmail.com"
+            "email": "127642611+gusstavomotta@users.noreply.github.com"
         }
     ],
     "require-dev": {
-        "phpunit/phpunit": "^10.5"
+        "phpunit/phpunit": "^11.0"
     }
 }
