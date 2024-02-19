@@ -95,10 +95,3 @@ class ListaNumericaTest extends TestCase
 
     }
 }
-//Foi usado a function setUp para declarar que a variável listaNumerica é um objeto da classe ListaNumerica
-// Cada function de teste contém 4 testes, com exceção da filtrarNumerosPares que tem 5 testes
-//Todas as functions validam um array com: Elementos positivos; Elementos negativos; Nenhum elemento; 1 elemento apenas; Todas estão retornando os resultados corretos
-// A testFiltrarNumerosPares tem 1 teste a mais pois eu testei um array com 1 elemento ímpar, para ver se ela retornava corretamente, e está tudo certo.
-//Sei que eu poderia ter feito de maneira mais concisa, por exemplo, eu fiz validações para positivos e negativos, 
-//porém se eu misturasse negativos com positivos nas functions de soma, maior, menor e listagem o programa iria validar corretamente também e com menos linhas
-//optei por deixar separado para facilitar a leitura e ver que as operações estão funcionando corretamente

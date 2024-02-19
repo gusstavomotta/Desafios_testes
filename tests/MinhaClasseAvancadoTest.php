@@ -42,6 +42,4 @@ class MinhaClasseAvancadoTest extends TestCase{
         $this->expectException(Exception::class);
         $this->minhaClasse->subtrair();
     }
-
-
 }

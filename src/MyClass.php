@@ -3,10 +3,9 @@
 class MyClass {
 
     public int $id;
-
     public String $nome;
     public int $idade;
-    public $arrayUsuarios;
+    public array $arrayUsuarios;
 
     public function __construct(int $id, String $nome,  int $idade){
 
@@ -14,6 +13,13 @@ class MyClass {
         $this->nome = $nome;
         $this->idade = $idade;
     }
+    public function __clone(){
+
+        $this->id = 1;
+        $this->nome = 'Gustavo';
+        $this->idade = 20;
+    }
+    
     public function getId(){
         return $this->id;
     }
@@ -39,8 +45,8 @@ class MyClass {
 
         $this->arrayUsuarios [] = $usuario;
     }
-    public function retornaUsuario(MyClass $usuario){
-        return $usuario;
+    public function retornaUsuario(){
+        return self::class;
     }
-    
+
 }
