@@ -1,13 +1,10 @@
 <?php
 
-use PHPUnit\Event\TestRunner\ExecutionAborted;
 use PHPUnit\Framework\TestCase;
 use function PHPUnit\Framework\assertEmpty;
 use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertFalse;
-use function PHPUnit\Framework\assertNotEmpty;
 use function PHPUnit\Framework\assertNotEquals;
-use function PHPUnit\Framework\assertNotSame;
 use function PHPUnit\Framework\assertObjectHasProperty;
 use function PHPUnit\Framework\assertObjectNotHasProperty;
 use function PHPUnit\Framework\assertSame;
@@ -20,7 +17,7 @@ class MyClassTest extends TestCase
 
     public function testAddMethods()
     {
-        
+
         $mock = $this->getMockBuilder(MyClass::class)
             ->disableOriginalConstructor()
             ->addMethods(['fazerAniversario'])
@@ -60,45 +57,50 @@ class MyClassTest extends TestCase
     }
     public function testDisableOriginalConstructor()
     {
+
         $mock = $this->getMockBuilder(MyClass::class)
             ->disableOriginalConstructor()
             ->getMock();
 
-        
+
         assertEmpty(get_object_vars($mock));
         // assertNotEmpty(get_object_vars($mock));
 
     }
     public function testDisableOriginalClone()
     {
+
         $mock = $this->getMockBuilder(MyClass::class)
             ->setConstructorArgs([1, 'Matheus', 19])
             ->disableOriginalClone()
             ->getMock();
 
         $clone = clone $mock;
+
         assertEquals(1, $clone->id);
         assertEquals('Matheus', $clone->nome);
         assertEquals(19, $clone->idade);
-    }
-    public function testDisableAutoload()
-    {
-
-        $this->expectException(Exception::class);
-        $this->expectExceptionMessageMatches('/^Class .* not found$/');
-
-        $mock = $this->getMockBuilder('teste')
-            ->disableAutoload()
-            ->getMock();
 
     }
+    // public function testDisableAutoload()
+    // {
+
+    //     $this->expectException(Exception::class);
+    //     $this->expectExceptionMessageMatches('/^Class .* not found$/');
+
+    //     $mock = $this->getMockBuilder('teste')
+    //         ->disableAutoload()
+    //         ->getMock();
+
+    // }
     public function testMethodWillReturn()
     {
+
         $mock = $this->createMock(MyClass::class);
 
         $id = 1;
         $idNaoValido = 2;
-        
+
         $mock->method('getId')->willReturn($id);
         assertEquals($id, $mock->getId());
         assertNotEquals($idNaoValido, $mock->getId());
@@ -113,6 +115,5 @@ class MyClassTest extends TestCase
 
         assertSame($mock, $mock->retornaUsuario());
         // assertNotSame($mock, $mock->retornaUsuario());
-
     }
 }

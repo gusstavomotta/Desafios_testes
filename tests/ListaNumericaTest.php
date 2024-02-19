@@ -17,7 +17,7 @@ class ListaNumericaTest extends TestCase
 
     public function testSomarElementos()
     {
-        $array = [1, 3, 5, 7 , 0];
+        $array = [1, 3, 5, 7, 0];
         assertEquals(16, $this->listaNumerica->somarElementos($array));
 
         $array = [1, -3, -5, 7, -10, 0];
@@ -48,7 +48,7 @@ class ListaNumericaTest extends TestCase
         $array = [1, 3, 5, 7];
         assertEquals(1, $this->listaNumerica->encontrarMenorElemento($array));
 
-        $array = [-1,-3, -5, -7];
+        $array = [-1, -3, -5, -7];
         assertEquals(-7, $this->listaNumerica->encontrarMenorElemento($array));
 
         $array = [];
@@ -72,16 +72,15 @@ class ListaNumericaTest extends TestCase
 
         $array = [6];
         assertEquals([6], $this->listaNumerica->ordenarLista($array));
-
     }
-     public function testFiltrarNumerosPares()
+    public function testFiltrarNumerosPares()
     {
         $array = [3, 1, 8, 6, 5];
-        $array_resultadoEsperado = [8,6];
+        $array_resultadoEsperado = [8, 6];
         assertEquals($array_resultadoEsperado, $this->listaNumerica->filtrarNumerosPares($array));
 
         $array = [3, 1, -8, -6, 5];
-        $array_resultadoEsperado = [-8,-6];
+        $array_resultadoEsperado = [-8, -6];
         assertEquals($array_resultadoEsperado, $this->listaNumerica->filtrarNumerosPares($array));
 
         $array = [];
@@ -92,6 +91,5 @@ class ListaNumericaTest extends TestCase
 
         $array = [11];
         assertEquals([], $this->listaNumerica->filtrarNumerosPares($array));
-
     }
 }
