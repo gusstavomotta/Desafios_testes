@@ -43,7 +43,7 @@ class MinhaClasseAvancadoTest extends TestCase
     {
 
         $this->expectException(Exception::class);
-        $this->minhaClasse->subtrair('exception', 'teste', 3);
+        $this->minhaClasse->subtrair('asdfsdafsad', 'teste', 3);
     }
 
     public function testSubtracaoVazio()
