@@ -9,6 +9,7 @@ use function PHPUnit\Framework\assertObjectHasProperty;
 use function PHPUnit\Framework\assertObjectNotHasProperty;
 use function PHPUnit\Framework\assertSame;
 use function PHPUnit\Framework\assertTrue;
+// use src\MyClass;
 
 require_once "src/MyClass.php";
 
@@ -69,7 +70,6 @@ class MyClassTest extends TestCase
     }
     public function testDisableOriginalClone()
     {
-
         $mock = $this->getMockBuilder(MyClass::class)
             ->setConstructorArgs([1, 'Matheus', 19])
             ->disableOriginalClone()
@@ -84,14 +84,22 @@ class MyClassTest extends TestCase
     }
     // public function testDisableAutoload()
     // {
-
-    //     $this->expectException(Exception::class);
-    //     $this->expectExceptionMessageMatches('/^Class .* not found$/');
-
-    //     $mock = $this->getMockBuilder('teste')
+    //     // try{
+    //     $mock = $this->getMockBuilder(MyClass::class)
+    //         ->disableOriginalConstructor()
     //         ->disableAutoload()
     //         ->getMock();
 
+    //         $this->expectException(Exception::class);
+    //         // spl_autoload_register()
+    //         //spl_autoload()
+    //         //var_dump($mock);
+    //         // spl_autoload_call('MyClass')
+    //         $mock->expects($this->once())->method(spl_autoload());
+
+    //     // }catch(Exception){s
+    //     //     throw new Exception ('teste');
+    //     // }
     // }
     public function testMethodWillReturn()
     {

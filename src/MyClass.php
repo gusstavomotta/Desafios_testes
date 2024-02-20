@@ -1,5 +1,6 @@
 <?php
 
+// namespace src;
 class MyClass
 {
 
@@ -21,7 +22,7 @@ class MyClass
         $this->nome = 'Gustavo';
         $this->idade = 20;
     }
-
+    
     public function getId()
     {
         return $this->id;
