@@ -92,10 +92,10 @@ class MyClassTest extends TestCase
 
     //         $this->expectException(Exception::class);
     //         // spl_autoload_register()
-    //         //spl_autoload()
-    //         //var_dump($mock);
+    //         // spl_autoload()
+    //         // var_dump($mock);
     //         // spl_autoload_call('MyClass')
-    //         $mock->expects($this->once())->method(spl_autoload());
+    //         $mock->expects($this->once())->method('spl_autoload');
 
     //     // }catch(Exception){s
     //     //     throw new Exception ('teste');
